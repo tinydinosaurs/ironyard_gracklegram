@@ -2,21 +2,17 @@
 var appURL = 'http://small-tiyfe.herokuapp.com/collections/insta-dana'
 
 // storing user input in two variables, one for each input field
-var imageInput = $('.image-url').val();
-var captionInput = $('.caption').val();
+var imageInput = $('.image-url');
+var captionInput = $('.caption');
 
-// create object containing user input as values
-var userInput = {
-	image: imageInput,
-	caption: captionInput
-}
 
-console.log(userInput)
+
+// console.log(userInput)
 // create array to store user input objects
 var imageCollection  = [];
 
-function collectImageEntries(input) {
-	imageCollection.push(input);
+function collectImageEntries(entry) {
+	imageCollection.push(entry);
 	// console.log(imageCollection);
 }
 
@@ -53,6 +49,11 @@ $.ajax(getSettings);
 
 $('form').submit(function(e) {
 	e.preventDefault();
+	// create object containing user input as values
+	var userInput = {
+	image: imageInput.val(),
+	caption: captionInput.val()
+}
 	collectImageEntries(userInput);
 	console.log(userInput);
 
