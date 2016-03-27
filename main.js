@@ -2,31 +2,53 @@
 var appURL = 'http://small-tiyfe.herokuapp.com/collections/insta-dana'
 
 
+// assign html element variables
+var imageURL = $('.image-url');
+var imageCaption = $('.caption');
+
+var urlError = $('#url-error');
+var captionError = $('#caption-error');
+
 $('form').submit(function(e) {
 	e.preventDefault();
-	// create object containing user input as values
-	
+	var validation;
+	urlError.html('&nbsp;');
+	captionError.html('&nbsp;');
+	if(imageURL.val().trim().lastIndexOf('http://', 0) === -1 && imageURL.val().lastIndexOf('https://', 0) === -1) {
+		urlError.html('URL must begin with \'http://\' or \'https://.\'');
+		validation = false;
+	} 
 
+	if(!imageCaption.val().trim()) {
+		captionError.html('Caption field cannot be blank');
+		validation = false;
+	}
+
+	if(validation === false) {
+		return;
+	}
+
+	// create an object containing user input as values
 	var userInput = {
-	image:  $('.image-url').val(),
-	caption:  $('.caption').val()
+	image:  imageURL.val(),
+	caption:  imageCaption.val()
 	}
 	
 	$('.image-url').val('');
 	$('.caption').val('');
 
-	$.ajax({
-		url: appURL,
-		type: 'POST',
-		data: userInput,
-		dataType: 'json',
-		success: function(data) {
-			//console.log(data);
-		},
-		error: function(err) {
-			console.log('something went horribly wrong here.');
-		} 
-	});
+	// $.ajax({
+	// 	url: appURL,
+	// 	type: 'POST',
+	// 	data: userInput,
+	// 	dataType: 'json',
+	// 	success: function(data) {
+	// 		//console.log(data);
+	// 	},
+	// 	error: function(err) {
+	// 		console.log('something went horribly wrong here.');
+	// 	} 
+	// });
 
 	$('section').html('');
 	$.ajax(getSettings);

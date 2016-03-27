@@ -1,7 +1,62 @@
 body {
-  background-color: #edeeef; }
+  background-color: #edeeef;
+  color: #606060; }
 
 section {
-  background-color: #e0e1e2; }
+  background-color: #e0e1e2;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0; }
+
+img {
+  width: 100%;
+  max-width: 100%; }
+
+header {
+  width: 100%;
+  background-color: #fff;
+  text-align: right;
+  color: #fff;
+  border-bottom: 1px solid #d6d6d6; }
+  header nav {
+    background-color: #456b99;
+    width: 100%;
+    height: 1em;
+    padding: 1em;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0; }
+  header form {
+    padding: 2em;
+    padding-top: 4em; }
+  header input {
+    width: 90%;
+    height: 3em;
+    padding-left: 2em;
+    margin: 0.75em 0 0.25em 0; }
+  header button {
+    margin-top: 1em;
+    padding: 1.5em 2.5em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    border: none;
+    border-radius: 5px; }
+
+#submit-btn {
+  background-color: #17aa56; }
+
+#url-error, #caption-error {
+  color: red;
+  margin: 0; }
+
+.image-content {
+  background-color: #fff;
+  margin: 0 3em 2em 3em;
+  padding-bottom: 1em;
+  border: 1px solid #d6d6d6; }
+  .image-content p {
+    margin: 1em 2em; }
 
 /*# sourceMappingURL=main.css.map */
