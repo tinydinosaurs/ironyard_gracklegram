@@ -4,18 +4,19 @@
 	<meta charset="UTF-8">
 	<title>Instagram Clone</title>
 	<link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 	<header>
-		<nav><a href="#" class="dropdown">link</a></nav>
+		<nav><div id="dropdown"><i class="fa fa-plus-circle"></i></div></nav>
 		<form>
 			<input type="text" placeholder="Image URL" class="image-url">
 			<p id="url-error">default text</p>
 			<input type="text" placeholder="Image Caption" class="caption">
 			<p id="caption-error">default text</p>
-			<button type="button">Cancel</button>
-			<button type="submit" id="submit-btn">Add Image</button>
+			<button type="button" id="cancel-btn">Cancel</button>
+			<button type="submit" id="submit-btn"><i class="fa fa-picture-o"></i>Add Image</button>
 		</form>
 	</header>
 	<section>
